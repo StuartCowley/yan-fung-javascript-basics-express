@@ -1,0 +1,16 @@
+const express = require('express');
+
+// importing response controller
+const numbersController = require('../controllers/numbers');
+
+// creating express router
+const numbersRouter = express.Router();
+
+// handling request using router
+numbersRouter.get('/add/:string1/and/:string2', numbersController.addNum);
+numbersRouter.get('/subtract/:string1/from/:string2', numbersController.substractNum);
+numbersRouter.post('/multiply', numbersController.multiplyNum);
+numbersRouter.post('/divide', numbersController.divideNum);
+numbersRouter.post('/remainder', numbersController.reminderNum);
+
+module.exports = numbersRouter;
